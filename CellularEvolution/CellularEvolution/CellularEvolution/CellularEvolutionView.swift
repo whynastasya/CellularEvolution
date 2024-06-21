@@ -8,54 +8,61 @@
 import SwiftUI
 import UIKit
 
-struct CellularEvolutionView: View {
-    @StateObject private var viewModel = CellularEvolutionViewModel()
+struct CellularEvolutionView<ViewModel: CellularEvolutionViewModel>: View {
+    @StateObject private var viewModel: ViewModel
     @State private var shouldScrollToTop = false
     
+    init(viewModel: ViewModel) {
+        _viewModel = StateObject(wrappedValue: viewModel)
+    }
+    
     var body: some View {
-        NavigationView {
-            ZStack {
-                ScrollViewReader { proxy in
-                    ScrollView {
-                        LazyVStack {
-                            ForEach(viewModel.cells) { cell in
-                                CellView(cell: cell)
-                                    .transition(.scale)
-                            }
-                            .animation(.default, value: viewModel.cells)
+//        NavigationView {
+            ScrollViewReader { proxy in
+                ScrollView {
+                    LazyVStack {
+                        ForEach(viewModel.cells) { cell in
+                            CellView(cell: cell)
+                                .transition(.scale)
                         }
-                        .scrollTargetLayout()
+                        .animation(.default, value: viewModel.cells)
                     }
-                    .scrollIndicators(.never)
-                    .scrollTargetBehavior(.viewAligned(limitBehavior: .always))
-                    .onChange(of: shouldScrollToTop) {
-                        if shouldScrollToTop {
-                            if let cellID = viewModel.cells.first?.id {
-                                withAnimation(.default) {
-                                    proxy.scrollTo(cellID, anchor: .top)
-                                }
+                    .scrollTargetLayout()
+                }
+                .scrollIndicators(.never)
+                .scrollTargetBehavior(.viewAligned(limitBehavior: .always))
+                .onChange(of: shouldScrollToTop) {
+                    if shouldScrollToTop {
+                        if let cellID = viewModel.cells.first?.id {
+                            withAnimation(.default) {
+                                proxy.scrollTo(cellID, anchor: .top)
                             }
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-                                withAnimation {
-                                    viewModel.addCell()
-                                }
-                                shouldScrollToTop = false
+                        }
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
+                            withAnimation {
+                                viewModel.addCell()
                             }
+                            shouldScrollToTop = false
                         }
                     }
                 }
-                
-                PlusButton {
-                    shouldScrollToTop = true
+                .overlay(alignment: .bottom) {
+                    PlusButton {
+                        shouldScrollToTop = true
+                    }
                 }
             }
-            .navigationTitle("Клеточное наполнение")
-            .navigationBarTitleDisplayMode(.inline)
-        }
+//            .navigationTitle("Клеточное наполнение")
+//            .navigationBarTitleDisplayMode(.inline)
+//        }
     }
 }
 
 #Preview {
-    CellularEvolutionView()
+    NavigationStack {
+        CellularEvolutionView(viewModel: CellularEvolutionViewModelImpl())
+    }
+    .navigationTitle("Клеточное наполнение")
+    .navigationBarTitleDisplayMode(.inline)
 }
 

@@ -7,18 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		84F59AFD2C25B5350037D2BE /* AliveCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F59AFC2C25B5340037D2BE /* AliveCell.swift */; };
+		84F59AFF2C25B5560037D2BE /* DeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F59AFE2C25B5560037D2BE /* DeadCell.swift */; };
+		84F59B012C25B57C0037D2BE /* LifeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F59B002C25B57C0037D2BE /* LifeCell.swift */; };
+		84F59B042C25B6B10037D2BE /* CellularEvolutionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F59B032C25B6B10037D2BE /* CellularEvolutionViewModel.swift */; };
 		EEC07BD72C22F218003BBEBC /* CellularEvolutionApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC07BD62C22F218003BBEBC /* CellularEvolutionApp.swift */; };
 		EEC07BDB2C22F21A003BBEBC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEC07BDA2C22F21A003BBEBC /* Assets.xcassets */; };
 		EEC07BDF2C22F21A003BBEBC /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEC07BDE2C22F21A003BBEBC /* Preview Assets.xcassets */; };
 		EEC07BEA2C22F2A9003BBEBC /* Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC07BE92C22F2A9003BBEBC /* Cell.swift */; };
 		EEC07BEC2C230D7C003BBEBC /* CellularEvolutionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC07BEB2C230D7C003BBEBC /* CellularEvolutionView.swift */; };
 		EEC07C0E2C232C7A003BBEBC /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC07C0D2C232C7A003BBEBC /* CellView.swift */; };
-		EEC07C102C2469CE003BBEBC /* CellularEvolutionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC07C0F2C2469CE003BBEBC /* CellularEvolutionViewModel.swift */; };
+		EEC07C102C2469CE003BBEBC /* CellularEvolutionViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC07C0F2C2469CE003BBEBC /* CellularEvolutionViewModelImpl.swift */; };
 		EEC07C162C258E01003BBEBC /* AnimatedGradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC07C152C258E01003BBEBC /* AnimatedGradientView.swift */; };
 		EEC07C182C259F20003BBEBC /* PlusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEC07C172C259F20003BBEBC /* PlusButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		84F59AFC2C25B5340037D2BE /* AliveCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AliveCell.swift; sourceTree = "<group>"; };
+		84F59AFE2C25B5560037D2BE /* DeadCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadCell.swift; sourceTree = "<group>"; };
+		84F59B002C25B57C0037D2BE /* LifeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeCell.swift; sourceTree = "<group>"; };
+		84F59B032C25B6B10037D2BE /* CellularEvolutionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellularEvolutionViewModel.swift; sourceTree = "<group>"; };
 		EEC07BD32C22F218003BBEBC /* CellularEvolution.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CellularEvolution.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEC07BD62C22F218003BBEBC /* CellularEvolutionApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellularEvolutionApp.swift; sourceTree = "<group>"; };
 		EEC07BDA2C22F21A003BBEBC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -27,7 +35,7 @@
 		EEC07BE92C22F2A9003BBEBC /* Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cell.swift; sourceTree = "<group>"; };
 		EEC07BEB2C230D7C003BBEBC /* CellularEvolutionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellularEvolutionView.swift; sourceTree = "<group>"; };
 		EEC07C0D2C232C7A003BBEBC /* CellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
-		EEC07C0F2C2469CE003BBEBC /* CellularEvolutionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellularEvolutionViewModel.swift; sourceTree = "<group>"; };
+		EEC07C0F2C2469CE003BBEBC /* CellularEvolutionViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellularEvolutionViewModelImpl.swift; sourceTree = "<group>"; };
 		EEC07C152C258E01003BBEBC /* AnimatedGradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedGradientView.swift; sourceTree = "<group>"; };
 		EEC07C172C259F20003BBEBC /* PlusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -43,6 +51,37 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84F59B022C25B68B0037D2BE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				EEC07C152C258E01003BBEBC /* AnimatedGradientView.swift */,
+				EEC07C0D2C232C7A003BBEBC /* CellView.swift */,
+				84F59B002C25B57C0037D2BE /* LifeCell.swift */,
+				84F59AFE2C25B5560037D2BE /* DeadCell.swift */,
+				84F59AFC2C25B5340037D2BE /* AliveCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		84F59B052C25B70A0037D2BE /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EEC07C0F2C2469CE003BBEBC /* CellularEvolutionViewModelImpl.swift */,
+				84F59B032C25B6B10037D2BE /* CellularEvolutionViewModel.swift */,
+			);
+			name = ViewModel;
+			sourceTree = "<group>";
+		};
+		84F59B062C25B7130037D2BE /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEC07C172C259F20003BBEBC /* PlusButton.swift */,
+				84F59B022C25B68B0037D2BE /* Cells */,
+				EEC07BEB2C230D7C003BBEBC /* CellularEvolutionView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		EEC07BCA2C22F218003BBEBC = {
 			isa = PBXGroup;
 			children = (
@@ -99,11 +138,8 @@
 		EEC07C132C24B3F2003BBEBC /* CellularEvolution */ = {
 			isa = PBXGroup;
 			children = (
-				EEC07C0F2C2469CE003BBEBC /* CellularEvolutionViewModel.swift */,
-				EEC07BEB2C230D7C003BBEBC /* CellularEvolutionView.swift */,
-				EEC07C172C259F20003BBEBC /* PlusButton.swift */,
-				EEC07C0D2C232C7A003BBEBC /* CellView.swift */,
-				EEC07C152C258E01003BBEBC /* AnimatedGradientView.swift */,
+				84F59B052C25B70A0037D2BE /* ViewModel */,
+				84F59B062C25B7130037D2BE /* View */,
 			);
 			path = CellularEvolution;
 			sourceTree = "<group>";
@@ -189,9 +225,13 @@
 				EEC07C0E2C232C7A003BBEBC /* CellView.swift in Sources */,
 				EEC07C162C258E01003BBEBC /* AnimatedGradientView.swift in Sources */,
 				EEC07BD72C22F218003BBEBC /* CellularEvolutionApp.swift in Sources */,
+				84F59AFF2C25B5560037D2BE /* DeadCell.swift in Sources */,
+				84F59AFD2C25B5350037D2BE /* AliveCell.swift in Sources */,
+				84F59B012C25B57C0037D2BE /* LifeCell.swift in Sources */,
 				EEC07BEC2C230D7C003BBEBC /* CellularEvolutionView.swift in Sources */,
 				EEC07C182C259F20003BBEBC /* PlusButton.swift in Sources */,
-				EEC07C102C2469CE003BBEBC /* CellularEvolutionViewModel.swift in Sources */,
+				84F59B042C25B6B10037D2BE /* CellularEvolutionViewModel.swift in Sources */,
+				EEC07C102C2469CE003BBEBC /* CellularEvolutionViewModelImpl.swift in Sources */,
 				EEC07BEA2C22F2A9003BBEBC /* Cell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -336,7 +376,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
@@ -374,7 +414,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.4;

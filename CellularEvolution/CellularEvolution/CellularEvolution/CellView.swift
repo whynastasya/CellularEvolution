@@ -14,77 +14,12 @@ struct CellView: View {
         VStack {
             switch cell.state {
                 case .alive:
-                    aliveCellView()
+                    AliveCell()
                 case .dead:
-                    deadCellView()
+                    DeadCell()
                 case .life:
-                    lifeCellView()
+                    LifeCell()
             }
         }
     }
-    
-    private func aliveCellView() -> some View {
-        HStack {
-            Image("leaves")
-                .resizable()
-                .frame(width: 30, height: 30)
-            Text("Живая клетка")
-                .foregroundColor(.white)
-                .font(.title)
-            Spacer()
-        }
-        .padding()
-        .background(
-            RoundedRectangle(cornerRadius: 10)
-                .fill(Color.clear)
-                .background(AnimatedGradientView().mask(RoundedRectangle(cornerRadius: 10)))
-        )
-        .padding(.vertical, 5)
-        .padding(.horizontal)
-        
-    }
-    
-    private func deadCellView() -> some View {
-        HStack {
-            Image("skull_and_crossbones")
-                .resizable()
-                .frame(width: 30, height: 30)
-            Text("Мёртвая клетка")
-                .foregroundColor(.white)
-                .font(.title)
-            Spacer()
-        }
-        .padding()
-        .background(
-            RoundedRectangle(cornerRadius: 10)
-                .fill(Color.clear)
-                .background(AnimatedGradientView(startColors: [.black, .gray], endColors: [.blue, .black]).mask(RoundedRectangle(cornerRadius: 10)))
-        )
-        .padding(.vertical, 5)
-        .padding(.horizontal)
-    }
-    
-    private func lifeCellView() -> some View {
-        HStack {
-            Image("octopus")
-                .resizable()
-                .frame(width: 30, height: 30)
-            Text("Жизнь")
-                .foregroundColor(.white)
-                .font(.title)
-            Spacer()
-        }
-        .padding()
-        .background(
-            RoundedRectangle(cornerRadius: 10)
-                .fill(Color.clear)
-                .background(AnimatedGradientView(startColors: [.blue, .purple], endColors: [.orange, .pink]).mask(RoundedRectangle(cornerRadius: 10)))
-        )
-        .padding(.vertical, 5)
-        .padding(.horizontal)
-    }
-}
-
-#Preview {
-    CellView(cell: .init(state: .alive))
 }

@@ -2,49 +2,16 @@
 //  CellularEvolutionViewModel.swift
 //  CellularEvolution
 //
-//  Created by nastasya on 20.06.2024.
+//  Created by nastasya on 21.06.2024.
 //
 
-import Foundation
-import SwiftUI
+import Combine
 
-class CellularEvolutionViewModel: ObservableObject {
-    @Published var cells: [Cell] = [Cell]()
-    @Published var liveCellCount = 0
-    @Published var deadCellCount = 0
+protocol CellularEvolutionViewModel: ObservableObject {
     
-    func addCell() {
-        let newState: CellState = Bool.random() ? .alive : .dead
-        let newCell = Cell(state: newState)
-        cells.insert(newCell, at: 0)
-        
-        
-        if newState == .alive {
-            liveCellCount += 1
-            deadCellCount = 0
-        } else {
-            liveCellCount = 0
-            deadCellCount += 1
-        }
-        checkCellAutomatonRules()
-    }
+    var cells: [Cell] { get }
+    var liveCellCount: Int { get }
+    var deadCellCount: Int { get }
     
-    private func checkCellAutomatonRules() {
-        if liveCellCount == 3 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                withAnimation {
-                    let newCell = Cell(state: .life)
-                    self.cells.insert(newCell, at: 0)
-                    self.liveCellCount = 0
-                }
-            }
-        } else if deadCellCount == 3 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-                withAnimation {
-                    self.cells.removeAll(where: { $0.state == .life })
-                    self.deadCellCount = 0
-                }
-            }
-        }
-    }
+    func addCell()
 }
